@@ -37,7 +37,7 @@ function certificate(sim: Sim, moduleId: string, welds: Weld[]) {
     .join("");
   const html = `<!doctype html><html><head><meta charset="utf-8"><title>Weld quality certificate ${moduleId}</title>
 <style>body{font-family:Segoe UI,system-ui,sans-serif;color:#0b1212;margin:32px}h1{font-size:22px;margin:0}table{border-collapse:collapse;width:100%;font-size:11px;margin-top:14px}td,th{border:1px solid #ccd;padding:3px 6px;text-align:left}th{background:#f3f5f8}.bar{background:#2b3e56;color:#fff;padding:10px 14px;border-radius:6px;display:flex;justify-content:space-between}.sig{margin-top:40px;display:flex;gap:60px}.sig div{border-top:1px solid #000;width:240px;padding-top:4px;font-size:12px}.small{font-size:11px;color:#556}</style></head>
-<body><div class="bar"><b>AX CARE · Weld quality certificate</b><span>${SITE.name}</span></div>
+<body><img src="${window.location.origin}/axcare-logo.webp" alt="AX CARE" style="height:60px;margin:-10px 0 6px -24px"/><div class="bar"><b>Weld quality certificate</b><span>${SITE.name}</span></div>
 <h1 style="margin-top:16px">${moduleId}</h1>
 <p>Number of welds: <b>${welds.length}</b> · OK ${ok} · CHECK ${check} · NG ${ng} · Worst verdict: <b>${worstVerdict(welds)}</b><br/>
 Welded ${fmtDateTime(welds[0]?.ts ?? sim.now)} – ${fmtTime(welds[welds.length - 1]?.ts ?? sim.now)} · recipes ${[...new Set(welds.map((w) => w.recipe))].join(", ")}<br/>

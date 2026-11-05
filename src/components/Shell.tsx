@@ -105,14 +105,26 @@ function RoleMenu() {
   );
 }
 
+/** AX CARE wordmark, cropped from public/axcare-logo.webp (2000×667, wordmark at x 225–1812, y 213–475). */
+export function Brand({ height = 24 }: { height?: number }) {
+  return (
+    <span className="brand-chip">
+      <span className="brand" style={{ height, width: (height * 1587) / 262 }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/axcare-logo.webp" alt="AX CARE" />
+      </span>
+    </span>
+  );
+}
+
 function TopBar() {
   const sim = useSim();
   const ui = useUI();
   const open = openAlerts(sim).length;
   return (
     <header className="topbar">
-      <Link href="/" className="logo">
-        <span className="logo-mark">AX</span>AX CARE
+      <Link href="/" className="logo" aria-label="AX CARE home">
+        <Brand />
       </Link>
       <select className="tb-select" defaultValue={SITE.id} aria-label="Site">
         <option value={SITE.id}>{SITE.name}</option>
@@ -197,7 +209,16 @@ export function Shell({ children }: { children: ReactNode }) {
     startTicker();
     setReady(true);
   }, []);
-  if (!ready) return <div className="loading">Loading AX CARE · generating 50,000 sample welds…</div>;
+  if (!ready)
+    return (
+      <div className="loading">
+        <div style={{ textAlign: "center" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/axcare-logo.webp" alt="AX CARE" style={{ width: 320, maxWidth: "80vw" }} />
+          <div>Loading · generating 50,000 sample welds…</div>
+        </div>
+      </div>
+    );
   return <Inner>{children}</Inner>;
 }
 

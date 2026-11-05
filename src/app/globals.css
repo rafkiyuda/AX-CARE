@@ -40,6 +40,9 @@ h3 { font-size: 14px; }
 /* ---------- shell ---------- */
 .topbar { position: sticky; top: 0; z-index: 30; background: var(--navy); color: #fff; display: flex; align-items: center; gap: 10px; padding: 8px 16px; flex-wrap: wrap; }
 .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: 0.04em; font-size: 16px; margin-right: 6px; }
+.brand-chip { display: inline-flex; background: #fff; border-radius: 6px; padding: 5px 9px; }
+.brand { position: relative; display: block; overflow: hidden; }
+.brand img { position: absolute; width: 126.02%; left: -14.18%; top: -81.3%; max-width: none; }
 .logo-mark { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, var(--red-2), var(--red)); display: grid; place-items: center; font-size: 13px; }
 .tb-select { background: var(--navy-2); color: #fff; border: 1px solid var(--navy-3); border-radius: 6px; padding: 5px 8px; }
 .tiers { display: flex; background: var(--navy-2); border-radius: 7px; padding: 2px; border: 1px solid var(--navy-3); }
